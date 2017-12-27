@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>阳光平台</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style type="text/css">
+			#select {
+				width: 100%;
+				height: 100px;
+				box-shadow: 0px 5px 5px -5px #999;
+			}
+			#select > div {
+				width: 33%;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				float: left;
+			}
+			
+			#title-one {
+				height: 100%;
+			}
+			
+			#title-two {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#title-three {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#main {
+				height: 600px;
+			}
+			
+			#main > div {
+				box-shadow: 0px 5px 5px -5px #999;
+				margin-left: 10px;
+				padding-left: 25px;
+				height: 100px;
+				line-height: 100px;
+				font-size: 30px;
+			}
+			
+			#main > div > a {
+				float: right;
+				padding-right: 20px;
+			}
+			
+			#header-four-right {
+				float: right;
+				margin-right: 20%;
+				color: #D3D3D3;
+			}
+			
+			#footer {
+				width: 100%;
+				height: 550px;
+			}
+			
+			#footer-one {
+				height: 170px;
+				line-height: 170px;
+				font-size: 30px;
+				box-shadow: 0px 5px 5px -5px #999;
+				margin-left: 10px;
+				padding-left: 25px;
+				
+			}
+			
+			#footer-two {
+				height: 140px;
+				line-height: 140px;
+				font-size: 30px;
+				box-shadow: 0px 5px 5px -5px #999;
+				padding-left: 35px;
+			}
+			
+			#footer-three {
+				height: 240px;
+			}
+			
+			#footer-three-middle {
+				width: 400px;
+				height: 100px;
+				font-size: 30px;
+				text-align: center;
+				margin-left: 25%;
+				margin-top: 50px;
+				border-radius: 5%;
+				background-color: #00DB00;
+				line-height: 100px;
+			}
+			
+			#history {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#history-left {
+				width: 70%;
+				height: 100px;
+				box-shadow: 0px 5px 5px -3px #999;
+				float: left;
+				font-size: 50px;
+				color: #1E90FF;
+				text-align: center;
+				line-height: 100px;
+			}
+			
+			#history-right {
+				width: 30%;
+				height: 100px;
+				box-shadow: -5px 5px 5px -3px #999;
+				float: right;
+				
+			}
+			
+			#next {
+				width: 100%;
+				height: 400px;
+			}
+			
+			#next-left {
+				width: 70%;
+				height: 400px;
+				box-shadow: 0px 0px 5px -3px #999;
+				float: left;
+			}
+			
+			#next-right {
+				width: 30%;
+				height: 400px;
+				box-shadow: -5px 0px 5px -3px #999;
+				float: right;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="select">
+				<div id="select-left">
+					<a href="#" onclick="change(1)" style="color: #46A3FF; font-size: 30px;">后勤零星维修</a>
+				</div>
+				<div id="select-middle">
+					<a href="#select" onclick="change(2)" style="color: #46A3FF; font-size: 30px;">网络故障报修</a>
+				</div>
+				<div ids="select-right">
+					<a href="#" onclick="change(3)" style="color: #46A3FF; font-size: 30px;">我的保修</a>
+				</div>
+		</div>
+		
+		<div id="title-one">
+			<div id="main">
+				<div id="header-one">
+						联系电话
+			    </div>
+				<div id="header-two">
+					园区名称
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+				<div id="header-three">
+					建筑名称
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+				<div id="header-four">
+					维修地点
+					<div id="header-four-right">
+						请填写寝室号
+					</div>
+				</div>
+				<div id="header-five">
+					维修种类
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+				<div id="header-six">
+					建议时间
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+			</div>
+			<div id="footer">
+				<div id="footer-one">
+					问题描述
+				</div>
+				<div id="footer-two">
+					图片上传
+				</div>
+				<div id="footer-three">
+					<div id="footer-three-middle">
+						确认
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="title-two" style="display: none;">
+			<div id="main">
+				<div id="header-one">
+						联系电话
+			    </div>
+				<div id="header-two">
+					园区名称
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+				<div id="header-three">
+					建筑名称
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+				<div id="header-four">
+					维修地点
+					<div id="header-four-right">
+						请填写所在的寝室号
+					</div>
+				</div>
+				<div id="header-five">
+					维修种类
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+				<div id="header-six">
+					建议时间
+					<a style="color: #D3D3D3; font-size: 30px;">&gt;</a>
+				</div>
+			</div>
+			<div id="footer">
+				<div id="footer-one">
+					问题描述
+				</div>
+				<div id="footer-two">
+					图片上传
+				</div>
+				<div id="footer-three">
+					<div id="footer-three-middle">
+						确认
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="title-three" style="display: none;">
+			<div id="history">
+				<div id="history-left">
+					报修历史
+				</div>
+				<div id="history-right">
+					
+				</div>
+			</div>
+			<div id="next">
+				<div id="next-left">
+					
+				</div>
+				<div id="next-right">
+					
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			function change(id){
+				var titleone = document.getElementById("title-one");
+				var titletwo = document.getElementById("title-two");
+				var titlethree = document.getElementById("title-three");
+				//debugger;
+				if(id==1){
+					titletwo.style.display='none';
+					titlethree.style.display='none';
+					titleone.style.display= "block"
+				}if (id == 2){
+					titleone.style.display='none';
+					titlethree.style.display='none';
+					titletwo.style.display='block';
+				}if (id == 3){
+					titleone.style.display='none';
+					titletwo.style.display='none';
+					titlethree.style.display='block';
+				}
+				
+			}
+			
+		</script>
+		
+	</body>
+</html>

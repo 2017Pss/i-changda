@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>失物招领</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style type="text/css">
+			#select {
+				width: 100%;
+				height: 100px;
+				box-shadow: 0px 5px 5px -5px #999;
+			}
+			
+			#select > div {
+				width: 50%;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				font-size: 25px;
+				float: left;
+			}
+			
+			#select-one {
+				height: 100%;
+			}
+			
+			#header,#twoheader {
+				width: 100%;
+				height: 200px;
+			}
+			
+			#all,#twoall {
+				margin-top: 40px;
+				padding-left: 8%;
+			}
+			
+			#all > div,#twoall > div {
+				float: left;
+				width: 45%;
+				text-align: center;
+				margin-top: 20px;
+			}
+			
+			#campuscard,#twocampuscard {
+				margin-top: 40px;
+				padding-left: 4%;
+			}
+			
+			#campuscard > div,#twocampuscard > div {
+				float: left;
+				margin-left: 8%;
+				text-align: center;
+			}
+			
+			#campuscard > div > div,#twocampuscard > div >div {
+				margin-top: 20px;
+				margin-left: 3px;
+			}
+			
+			#wallet,#twowallet {
+				margin-top: 40px;
+				padding-left: 4%;
+			}
+			
+			#wallet > div,#twowallet > div {
+				float: left;
+				margin-left: 8%;
+				text-align: center;
+			}
+			
+			#wallet > div > div,#twowallet > div >div {
+				margin-top: 20px;
+				margin-left: 3px;
+			}
+			
+			#keys,#twokeys {
+				margin-top: 40px;
+				padding-left: 4%;
+			}
+			
+			#keys > div,#twokeys > div {
+				float: left;
+				margin-left: 8%;
+				text-align: center;
+			}
+			
+			#keys > div > div,#twokeys > div > div {
+				margin-top: 20px;
+				margin-left: 3px;
+			}
+			
+			#electronic,#twoelectronic {
+				margin-top: 40px;
+				padding-left: 4%;
+			}
+			
+			#electronic > div,#twoelectronic > div {
+				float: left;
+				margin-left: 8%;
+				text-align: center;
+			}
+			
+			#electronic > div > div,#twoelectronic > div > div {
+				margin-top: 20px;
+				margin-left: 3px;
+			}
+			
+			#identitycard,#twoidentitycard {
+				margin-top: 40px;
+				padding-left: 4%;
+			}
+			
+			#identitycard > div,#twoidentitycard > div {
+				float: left;
+				margin-left: 8%;
+				text-align: center;
+			}
+			
+			#identitycard > div > div,#twoidentitycard > div > div {
+				margin-top: 20px;
+				margin-left: 3px;
+			}
+			
+			#others,#twoothers {
+				margin-top: 40px;
+				padding-left: 4%;
+			}
+			
+			#others > div,#twoothers > div {
+				float: left;
+				margin-left: 8%;
+				text-align: center;
+			}
+			
+			#others > div > div,#twoothers > div > div {
+				margin-top: 20px;
+				margin-left: 3px;
+			}
+			
+			#header > div,#twoheader > div {
+				width: 20%;
+				height: 70px;
+				margin-left: 3.4%;
+				float: left;
+				border: 3px solid #46A3FF;
+				border-radius: 3%;
+				margin-top: 2%;
+				text-align: center;
+				line-height: 70px;
+			}
+			
+			#header > div > a,#twoheader > div > a {
+				color: #46A3FF;
+				font-size: 30px;
+			}
+			
+			#select-two {
+				height: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="select">
+			<div id="select-left">
+				<a href="#" onclick="change(1)" style="color: #46A3FF; font-size: 30px;">失物</a>
+			</div>
+			<div id="select-right">
+				<a href="#" onclick="change(2)" style="color: #46A3FF; font-size: 30px;">招领</a>
+			</div>
+		</div>
+		
+		<div id="select-one">
+			<div id="header">
+				<div name="td" id="header-one" onclick="changeBackgroundAndColor('header-one')">
+					<a href="#" onclick="secondchange(1)">全部</a>
+				</div>
+				<div name="td" id="header-two" onclick="changeBackgroundAndColor('header-two')">
+					<a href="#" onclick="secondchange(2)">校园卡</a>
+				</div>
+				<div name="td" id="header-three" onclick="changeBackgroundAndColor('header-three')">
+					<a href="#" onclick="secondchange(3)">钱包</a>
+				</div>
+				<div name="td" id="header-four" onclick="changeBackgroundAndColor('header-four')">
+					<a href="#" onclick="secondchange(4)">钥匙</a>
+				</div>
+				<div name="td" id="header-five" onclick="changeBackgroundAndColor('header-five')">
+					<a href="#" onclick="secondchange(5)">电子产品</a>
+				</div>
+				<div name="td" id="header-six" onclick="changeBackgroundAndColor('header-six')">
+					<a href="#" onclick="secondchange(6)">身份证</a>
+				</div>
+				<div name="td" id="header-seven" onclick="changeBackgroundAndColor('header-seven')">
+					<a href="#" onclick="secondchange(7)">银行卡</a>
+				</div>
+				<div name="td" id="header-eight" onclick="changeBackgroundAndColor('header-eight')">
+					<a href="#" onclick="secondchange(8)">其他</a>
+				</div>
+			</div>
+			<div id="all" style="display: block;">
+				<div id="all-one">
+					<img src="img/picture1.png" />
+				</div>
+				<div id="all-two">
+					<img src="img/picture2.png" />
+				</div>
+				<div id="all-three">
+					<img src="img/picture3.png" />
+				</div>
+				<div id="all-four">
+					<img src="img/picture4.png" />
+				</div>
+				<div id="all-five">
+					<img src="img/picture5.png" />
+				</div>
+				<div id="all-six">
+					<img src="img/picture6.png" />
+				</div>
+				<div id="all-seven">
+					<img src="img/picture7.png" />
+				</div>
+				<div id="all-eight">
+					<img src="img/picture8.png" />
+				</div>
+				<div id="all-nine">
+					<img src="img/picture9.png" />
+				</div>
+				<div id="all-ten">
+					<img src="img/picture10.png" />
+				</div>
+				<div id="all-eleven">
+					<img src="img/picture11.png" />
+				</div>
+				<div id="all-twelve">
+					<img src="img/picture12.png" />
+				</div>
+			</div>
+			<div id="campuscard" style="display: none;">
+				<div id="campuscard-left">
+					<div id="campuscard-one">
+						<img src="img/picture1.png" />
+						</div>
+					<div id="campuscard-two">
+						<img src="img/picture2.png" />
+					</div>
+					<div id="campuscard-three">
+						<img src="img/picture3.png" />
+					</div>
+					<div id="campuscard-four">
+						<img src="img/picture4.png" />
+					</div>
+					<div id="campuscard-five">
+						<img src="img/picture6.png" />
+					</div>
+					<div id="campuscard-six">
+						<img src="img/picture9.png" />
+					</div>
+				</div>
+				<div id="campuscard-right">
+					<div id="campuscard-seven">
+						<img src="img/picture12.png" />
+					</div>
+					<div id="campuscard-eight">
+						<img src="img/picture10.png" />
+					</div>
+					<div id="campuscard-nine">
+						<img src="img/picture13.png" />
+					</div>
+					<div id="campuscard-ten">
+						<img src="img/picture11.png" />
+					</div>
+					<div id="campuscard-eleven">
+						<img src="img/picture14.png" />
+					</div>
+					<div id="campuscard-twelve">
+						<img src="img/picture15.png" />
+					</div>
+				</div>
+			</div>
+			<div id="wallet" style="display: none;">
+				<div id="wallet-left">
+					<div id="one">
+						<img src="img/wallet1.png" />
+					</div>
+					<div id="two">
+						<img src="img/wallet2.png" />
+					</div>
+					<div id="three">
+						<img src="img/wallet3.png" />
+					</div>
+					<div id="four">
+						<img src="img/picture4.png" />
+					</div>
+				</div>
+				<div id="wallet-right">
+					<div id="five">
+						<img src="img/wallet5.png" />
+					</div>
+					<div id="six">
+						<img src="img/wallet6.png" />
+					</div>
+					<div id="seven">
+						<img src="img/wallet7.png" />
+					</div>
+				</div>
+			</div>
+			<div id="keys" style="display: none;">
+				<div id="keys-left">
+					<div id="keys-one">
+						<img src="img/keys1.png" />
+					</div>
+					<div id="keys-two">
+						<img src="img/keys6.png" />
+					</div>
+					<div id="keys-three">
+						<img src="img/keys4.png" />
+					</div>
+				</div>
+				<div id="keys-right">
+					<div id="keys-four">
+						<img src="img/keys3.png" />
+					</div>
+					<div id="keys-five">
+						<img src="img/keys2.png" />
+					</div>
+					<div id="keys-six">
+						<img src="img/keys5.png" />
+					</div>
+				</div>
+			</div>
+			<div id="electronic" style="display: none;">
+				<div id="electronic-left">
+					<div id="electronic-one">
+						<img src="img/elec1.png" />
+					</div>
+					<div id="electronic-two">
+						<img src="img/elec2.png" />
+					</div>
+					<div id="electronic-three">
+						<img src="img/elec3.png" />
+					</div>
+					<div id="electronic-four">
+						<img src="img/elec4.png" />
+					</div>
+					<div id="electronic-five">
+						<img src="img/elec5.png" />
+					</div>
+					<div id="electronic-six">
+						<img src="img/elec6.png" />
+					</div>
+				</div>
+				<div id="electronic-right">
+					<div id="electronic-seven">
+						<img src="img/elec7.png" />
+					</div>
+					<div id="electronic-eight">
+						<img src="img/elec8.png" />
+					</div>
+					<div id="electronic-nine">
+						<img src="img/elec9.png" />
+					</div>
+					<div id="electronic-ten">
+						<img src="img/elec10.png" />
+					</div>
+					<div id="electronic-eleven">
+						<img src="img/elec11.png" />
+					</div>
+				</div>
+			</div>
+			<div id="identitycard" style="display: none;">
+				<div id="identitycard-left">
+					<div id="identity-one">
+						<img src="img/identity1.png" />
+					</div>
+					<div id="identity-two">
+						<img src="img/identity2.png" />
+					</div>
+					<div id="identity-three">
+						<img src="img/identity3.png" />
+					</div>
+				</div>
+				<div id="identitycard-right">
+					<div id="identity-four">
+						<img src="img/identity4.png" />
+					</div>
+					<div id="identity-five">
+						<img src="img/identity5.png" />
+					</div>
+					<div id="identity-six">
+						<img src="img/identity6.png" />
+					</div>
+				</div>
+			</div>
+			<div id="bankcard" style="display: none;">
+				
+			</div>
+			<div id="others" style="display: none;">
+				<div id="other-left">
+					<div id="other-one">
+						<img src="img/other1.png" />
+					</div>
+					<div id="other-two">
+						<img src="img/other2.png" />
+					</div>
+					<div id="other-three">
+						<img src="img/other3.png" />
+					</div>
+					<div id="other-four">
+						<img src="img/other4.png" />
+					</div>
+					<div id="other-five">
+						<img src="img/other6.png" />
+					</div>
+					<div id="other-six">
+						<img src="img/other5.png" />
+					</div>
+				</div>
+				<div id="other-right">
+					<div id="other-seven">
+						<img src="img/other7.png" />
+					</div>
+					<div id="other-eight">
+						<img src="img/other8.png" />
+					</div>
+					<div id="other-nine">
+						<img src="img/other9.png" />
+					</div>
+					<div id="other-ten">
+						<img src="img/other10.png" />
+					</div>
+					<div id="other-eleven">
+						<img src="img/other11.png" />
+					</div>
+					<div id="other-twelve">
+						<img src="img/other12.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="select-two" style="display: none;">
+			<div id="twoheader">
+				<div name="btn" id="twoheader-one" onclick="changeBackgroundAndColortwo('twoheader-one')">
+					<a href="#" onclick="twosecondchange(1)">全部</a>
+				</div>
+				<div name="btn" id="twoheader-two" onclick="changeBackgroundAndColortwo('twoheader-two')">
+					<a href="#" onclick="twosecondchange(2)">校园卡</a>
+				</div>
+				<div name="btn" id="twoheader-three" onclick="changeBackgroundAndColortwo('twoheader-three')">
+					<a href="#" onclick="twosecondchange(3)">钱包</a>
+				</div>
+				<div name="btn" id="twoheader-four" onclick="changeBackgroundAndColortwo('twoheader-four')">
+					<a href="#" onclick="twosecondchange(4)">钥匙</a>
+				</div>
+				<div name="btn" id="twoheader-five" onclick="changeBackgroundAndColortwo('twoheader-five')">
+					<a href="#" onclick="twosecondchange(5)">电子产品</a>
+				</div>
+				<div name="btn" id="twoheader-six" onclick="changeBackgroundAndColortwo('twoheader-six')">
+					<a href="#" onclick="twosecondchange(6)">身份证</a>
+				</div>
+				<div name="btn" id="twoheader-seven" onclick="changeBackgroundAndColortwo('twoheader-seven')">
+					<a href="#" onclick="twosecondchange(7)">银行卡</a>
+				</div>
+				<div name="btn" id="twoheader-eight" onclick="changeBackgroundAndColortwo('twoheader-eight')">
+					<a href="#" onclick="twosecondchange(8)">其他</a>
+				</div>
+			</div>
+			<div id="twoall" style="display: block;">
+				<div id="twoall-one">
+					<img src="img/picture1.png" />
+				</div>
+				<div id="twoall-two">
+					<img src="img/picture2.png" />
+				</div>
+				<div id="twoall-three">
+					<img src="img/picture3.png" />
+				</div>
+				<div id="twoall-four">
+					<img src="img/picture4.png" />
+				</div>
+				<div id="twoall-five">
+					<img src="img/picture5.png" />
+				</div>
+				<div id="twoall-six">
+					<img src="img/picture6.png" />
+				</div>
+				<div id="twoall-seven">
+					<img src="img/picture7.png" />
+				</div>
+				<div id="twoall-eight">
+					<img src="img/picture8.png" />
+				</div>
+				<div id="twoall-nine">
+					<img src="img/picture9.png" />
+				</div>
+				<div id="twoall-ten">
+					<img src="img/picture10.png" />
+				</div>
+				<div id="twoall-eleven">
+					<img src="img/picture11.png" />
+				</div>
+				<div id="twoall-twelve">
+					<img src="img/picture12.png" />
+				</div>
+			</div>
+			<div id="twocampuscard" style="display: none;">
+				<div id="twocampuscard-left">
+					<div id="twocampuscard-one">
+						<img src="img/picture1.png" />
+						</div>
+					<div id="twocampuscard-two">
+						<img src="img/picture2.png" />
+					</div>
+					<div id="twocampuscard-three">
+						<img src="img/picture3.png" />
+					</div>
+					<div id="twocampuscard-four">
+						<img src="img/picture4.png" />
+					</div>
+					<div id="twocampuscard-five">
+						<img src="img/picture6.png" />
+					</div>
+					<div id="twocampuscard-six">
+						<img src="img/picture9.png" />
+					</div>
+				</div>
+				<div id="twocampuscard-right">
+					<div id="twocampuscard-seven">
+						<img src="img/picture12.png" />
+					</div>
+					<div id="twocampuscard-eight">
+						<img src="img/picture10.png" />
+					</div>
+					<div id="twocampuscard-nine">
+						<img src="img/picture13.png" />
+					</div>
+					<div id="twocampuscard-ten">
+						<img src="img/picture11.png" />
+					</div>
+					<div id="twocampuscard-eleven">
+						<img src="img/picture14.png" />
+					</div>
+					<div id="twocampuscard-twelve">
+						<img src="img/picture15.png" />
+					</div>
+				</div>
+			</div>
+			<div id="twowallet" style="display: none;">
+				<div id="twowallet-left">
+					<div id="twoone">
+						<img src="img/wallet1.png" />
+					</div>
+					<div id="twotwo">
+						<img src="img/wallet2.png" />
+					</div>
+					<div id="twothree">
+						<img src="img/wallet3.png" />
+					</div>
+					<div id="twofour">
+						<img src="img/picture4.png" />
+					</div>
+				</div>
+				<div id="twowallet-right">
+					<div id="twofive">
+						<img src="img/wallet5.png" />
+					</div>
+					<div id="twosix">
+						<img src="img/wallet6.png" />
+					</div>
+					<div id="twoseven">
+						<img src="img/wallet7.png" />
+					</div>
+				</div>
+			</div>
+			<div id="twokeys" style="display: none;">
+				<div id="twokeys-left">
+					<div id="twokeys-one">
+						<img src="img/keys1.png" />
+					</div>
+					<div id="twokeys-two">
+						<img src="img/keys6.png" />
+					</div>
+					<div id="twokeys-three">
+						<img src="img/keys4.png" />
+					</div>
+				</div>
+				<div id="twokeys-right">
+					<div id="twokeys-four">
+						<img src="img/keys3.png" />
+					</div>
+					<div id="twokeys-five">
+						<img src="img/keys2.png" />
+					</div>
+					<div id="twokeys-six">
+						<img src="img/keys5.png" />
+					</div>
+				</div>
+			</div>
+			<div id="twoelectronic" style="display: none;">
+				<div id="twoelectronic-left">
+					<div id="twoelectronic-one">
+						<img src="img/elec1.png" />
+					</div>
+					<div id="twoelectronic-two">
+						<img src="img/elec2.png" />
+					</div>
+					<div id="twoelectronic-three">
+						<img src="img/elec3.png" />
+					</div>
+					<div id="twoelectronic-four">
+						<img src="img/elec4.png" />
+					</div>
+					<div id="twoelectronic-five">
+						<img src="img/elec5.png" />
+					</div>
+					<div id="twoelectronic-six">
+						<img src="img/elec6.png" />
+					</div>
+				</div>
+				<div id="twoelectronic-right">
+					<div id="twoelectronic-seven">
+						<img src="img/elec7.png" />
+					</div>
+					<div id="twoelectronic-eight">
+						<img src="img/elec8.png" />
+					</div>
+					<div id="twoelectronic-nine">
+						<img src="img/elec9.png" />
+					</div>
+					<div id="twoelectronic-ten">
+						<img src="img/elec10.png" />
+					</div>
+					<div id="twoelectronic-eleven">
+						<img src="img/elec11.png" />
+					</div>
+				</div>
+			</div>
+			<div id="twoidentitycard" style="display: none;">
+				<div id="twoidentitycard-left">
+					<div id="twoidentity-one">
+						<img src="img/identity1.png" />
+					</div>
+					<div id="twoidentity-two">
+						<img src="img/identity2.png" />
+					</div>
+					<div id="twoidentity-three">
+						<img src="img/identity3.png" />
+					</div>
+				</div>
+				<div id="twoidentitycard-right">
+					<div id="twoidentity-four">
+						<img src="img/identity4.png" />
+					</div>
+					<div id="twoidentity-five">
+						<img src="img/identity5.png" />
+					</div>
+					<div id="twoidentity-six">
+						<img src="img/identity6.png" />
+					</div>
+				</div>
+			</div>
+			<div id="twobankcard" style="display: none;">
+				
+			</div>
+			<div id="twoothers" style="display: none;">
+				<div id="twoother-left">
+					<div id="twoother-one">
+						<img src="img/other1.png" />
+					</div>
+					<div id="twoother-two">
+						<img src="img/other2.png" />
+					</div>
+					<div id="twoother-three">
+						<img src="img/other3.png" />
+					</div>
+					<div id="twoother-four">
+						<img src="img/other4.png" />
+					</div>
+					<div id="twoother-five">
+						<img src="img/other6.png" />
+					</div>
+					<div id="twoother-six">
+						<img src="img/other5.png" />
+					</div>
+				</div>
+				<div id="twoother-right">
+					<div id="twoother-seven">
+						<img src="img/other7.png" />
+					</div>
+					<div id="twoother-eight">
+						<img src="img/other8.png" />
+					</div>
+					<div id="twoother-nine">
+						<img src="img/other9.png" />
+					</div>
+					<div id="twoother-ten">
+						<img src="img/other10.png" />
+					</div>
+					<div id="twoother-eleven">
+						<img src="img/other11.png" />
+					</div>
+					<div id="twoother-twelve">
+						<img src="img/other12.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			function changeBackgroundAndColortwo(currentId){
+				var allNode = document.getElementsByName("btn");
+
+				for(var i=0;i<allNode.length;i++){
+					var childNode = allNode[i];
+
+					childNode.style.background='#FFFFFF';
+					childNode.children[0].style.color='#46A3FF';
+				}
+				//debugger;
+				var currentNode = document.getElementById(currentId);
+				currentNode.style.background='#46A3FF';
+				currentNode.children[0].style.color='#FFFFFF';
+			}
+			
+			function changeBackgroundAndColor(currentId){
+				var allNode = document.getElementsByName("td");
+
+				for(var i=0;i<allNode.length;i++){
+					var childNode = allNode[i];
+
+					childNode.style.background='#FFFFFF';
+					childNode.children[0].style.color='#46A3FF';
+				}
+				//debugger;
+				var currentNode = document.getElementById(currentId);
+				currentNode.style.background='#46A3FF';
+				currentNode.children[0].style.color='#FFFFFF';
+			}
+			
+			
+			function change(id){
+				var lost = document.getElementById("select-one");
+				var found = document.getElementById("select-two");
+				//debugger;
+				if(id==1){
+					found.style.display='none';
+					lost.style.display='block';
+				}else{
+					lost.style.display='none';
+					found.style.display='block';
+				}
+				
+			}
+			
+			function secondchange(id){
+				var all = document.getElementById("all");
+				var campuscard = document.getElementById("campuscard");
+				var wallet = document.getElementById("wallet");
+				var keys = document.getElementById("keys");
+				var electronic = document.getElementById("electronic");
+				var identitycard = document.getElementById("identitycard");
+				var bankcard = document.getElementById("bankcard");
+				var others = document.getElementById("others");
+				if (id == 1){
+					all.style.display='block';
+					campuscard.style.display='none';
+					wallet.style.display='none';
+					keys.style.display='none';
+					electronic.style.display='none';
+					identitycard.style.display='none';
+					bankcard.style.display='none';
+					others.style.display='none';
+				}if (id == 2){
+					all.style.display='none';
+					campuscard.style.display='block';
+					wallet.style.display='none';
+					keys.style.display='none';
+					electronic.style.display='none';
+					identitycard.style.display='none';
+					bankcard.style.display='none';
+					others.style.display='none';
+				}if (id == 3){
+					all.style.display='none';
+					campuscard.style.display='none';
+					wallet.style.display='block';
+					keys.style.display='none';
+					electronic.style.display='none';
+					identitycard.style.display='none';
+					bankcard.style.display='none';
+					others.style.display='none';
+				}if (id == 4){
+					all.style.display='none';
+					campuscard.style.display='none';
+					wallet.style.display='none';
+					keys.style.display='block';
+					electronic.style.display='none';
+					identitycard.style.display='none';
+					bankcard.style.display='none';
+					others.style.display='none';
+				}if (id == 5){
+					all.style.display='none';
+					campuscard.style.display='none';
+					wallet.style.display='none';
+					keys.style.display='none';
+					electronic.style.display='block';
+					identitycard.style.display='none';
+					bankcard.style.display='none';
+					others.style.display='none';
+				}if (id == 6){
+					all.style.display='none';
+					campuscard.style.display='none';
+					wallet.style.display='none';
+					keys.style.display='none';
+					electronic.style.display='none';
+					identitycard.style.display='block';
+					bankcard.style.display='none';
+					others.style.display='none';
+				}if (id == 7){
+					all.style.display='none';
+					campuscard.style.display='none';
+					wallet.style.display='none';
+					keys.style.display='none';
+					electronic.style.display='none';
+					identitycard.style.display='none';
+					bankcard.style.display='block';
+					others.style.display='none';
+				}if (id == 8){
+					all.style.display='none';
+					campuscard.style.display='none';
+					wallet.style.display='none';
+					keys.style.display='none';
+					electronic.style.display='none';
+					identitycard.style.display='none';
+					bankcard.style.display='none';
+					others.style.display='block';
+				}
+			}
+			
+			function twosecondchange(id){
+				var twoall = document.getElementById("twoall");
+				var twocampuscard = document.getElementById("twocampuscard");
+				var twowallet = document.getElementById("twowallet");
+				var twokeys = document.getElementById("twokeys");
+				var twoelectronic = document.getElementById("twoelectronic");
+				var twoidentitycard = document.getElementById("twoidentitycard");
+				var twobankcard = document.getElementById("twobankcard");
+				var twoothers = document.getElementById("twoothers");
+				if (id == 1){
+					twoall.style.display='block';
+					twocampuscard.style.display='none';
+					twowallet.style.display='none';
+					twokeys.style.display='none';
+					twoelectronic.style.display='none';
+					twoidentitycard.style.display='none';
+					twobankcard.style.display='none';
+					twoothers.style.display='none';
+				}if (id == 2){
+					twoall.style.display='none';
+					twocampuscard.style.display='block';
+					twowallet.style.display='none';
+					twokeys.style.display='none';
+					twoelectronic.style.display='none';
+					twoidentitycard.style.display='none';
+					twobankcard.style.display='none';
+					twoothers.style.display='none';
+				}if (id == 3){
+					twoall.style.display='none';
+					twocampuscard.style.display='none';
+					twowallet.style.display='block';
+					twokeys.style.display='none';
+					twoelectronic.style.display='none';
+					twoidentitycard.style.display='none';
+					twobankcard.style.display='none';
+					twoothers.style.display='none';
+				}if (id == 4){
+					twoall.style.display='none';
+					twocampuscard.style.display='none';
+					twowallet.style.display='none';
+					twokeys.style.display='block';
+					twoelectronic.style.display='none';
+					twoidentitycard.style.display='none';
+					twobankcard.style.display='none';
+					twoothers.style.display='none';
+				}if (id == 5){
+					twoall.style.display='none';
+					twocampuscard.style.display='none';
+					twowallet.style.display='none';
+					twokeys.style.display='none';
+					twoelectronic.style.display='block';
+					twoidentitycard.style.display='none';
+					twobankcard.style.display='none';
+					twoothers.style.display='none';
+				}if (id == 6){
+					twoall.style.display='none';
+					twocampuscard.style.display='none';
+					twowallet.style.display='none';
+					twokeys.style.display='none';
+					twoelectronic.style.display='none';
+					twoidentitycard.style.display='block';
+					twobankcard.style.display='none';
+					twoothers.style.display='none';
+				}if (id == 7){
+					twoall.style.display='none';
+					twocampuscard.style.display='none';
+					twowallet.style.display='none';
+					twokeys.style.display='none';
+					twoelectronic.style.display='none';
+					twoidentitycard.style.display='none';
+					twobankcard.style.display='block';
+					twoothers.style.display='none';
+				}if (id == 8){
+					twoall.style.display='none';
+					twocampuscard.style.display='none';
+					twowallet.style.display='none';
+					twokeys.style.display='none';
+					twoelectronic.style.display='none';
+					twoidentitycard.style.display='none';
+					twobankcard.style.display='none';
+					twoothers.style.display='block';
+				}
+			}
+			
+		</script>
+	</body>
+</html>
